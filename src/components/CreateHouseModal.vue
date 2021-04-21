@@ -24,7 +24,7 @@
                      class="form-control"
                      id="bedrooms"
                      placeholder="Bedrooms..."
-                     v-model="state.newHouse"
+                     v-model="state.newHouse.bedrooms"
                      required
               >
             </div>
@@ -35,12 +35,20 @@
                      class="form-control"
                      id="bathrooms"
                      placeholder="Bathrooms..."
+                     v-model="state.newHouse.bathrooms"
+                     required
               >
             </div>
 
             <div class="form-group">
               <label for="levels">Levels</label>
-              <input type="text" class="form-control" id="levels" placeholder="Levels...">
+              <input type="text"
+                     class="form-control"
+                     id="levels"
+                     placeholder="Levels..."
+                     v-model="state.newHouse.levels"
+                     required
+              >
             </div>
 
             <div class="form-group">
@@ -50,12 +58,20 @@
                      id="year"
                      min="1800"
                      placeholder="Year..."
+                     v-model="state.newHouse.year"
+                     required
               >
             </div>
 
             <div class="form-group">
               <label for="price">Price</label>
-              <input type="text" class="form-control" id="price" placeholder="Price...">
+              <input type="text"
+                     class="form-control"
+                     id="price"
+                     placeholder="Price..."
+                     v-model="state.newHouse.price"
+                     required
+              >
             </div>
 
             <div class="form-group">
@@ -64,11 +80,19 @@
                      class="form-control"
                      id="description"
                      placeholder="Description..."
+                     v-model="state.newHouse.description"
+                     required
               >
             </div>
             <div class="form-group">
               <label for="imgUrl">Image Url</label>
-              <input type="text" class="form-control" id="imgUrl" placeholder="Url...">
+              <input type="text"
+                     class="form-control"
+                     id="imgUrl"
+                     placeholder="Url..."
+                     v-model="state.newHouse.imgURL"
+                     required
+              >
             </div>
           </div>
           <div class="modal-footer">

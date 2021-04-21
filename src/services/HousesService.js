@@ -15,7 +15,6 @@ class HousesService {
 
   async createHouse(newHouse) {
     const res = await api.post('houses', newHouse)
-    debugger
     AppState.houses.push(res.data)
     // everytime a house is created, we will change pages
     router.push({ name: 'HouseDetails', params: { id: res.data.id } })

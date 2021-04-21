@@ -24,6 +24,7 @@
                      class="form-control"
                      id="company"
                      placeholder="Company..."
+                     v-model="state.newJob.company"
                      required
               >
             </div>
@@ -33,6 +34,7 @@
                      class="form-control"
                      id="jobTitle"
                      placeholder="Job Title..."
+                     v-model="state.newJob.jobTitle"
                      required
               >
             </div>
@@ -42,6 +44,7 @@
                      class="form-control"
                      id="hours"
                      placeholder="Hours..."
+                     v-model="state.newJob.hours"
                      required
               >
             </div>
@@ -52,6 +55,8 @@
                      id="rate"
                      placeholder="Rate..."
                      min="15"
+                     v-model="state.newJob.rate"
+                     required
               >
             </div>
             <div class="form-group">
@@ -62,6 +67,8 @@
                      placeholder="Description..."
                      minlength="3"
                      maxlength="20"
+                     v-model="state.newJob.description"
+                     required
               >
             </div>
           </div>

@@ -2,11 +2,14 @@
   <header>
     <Navbar />
   </header>
-  <!-- NOTE router-view allows the router to determine the component that should be injected -->
+
   <main>
     <router-view />
     <CreateCarModal />
+    <CreateJobModal />
+    <CreateHouseModal />
   </main>
+
   <footer>
     <div class="bg-dark text-light text-center p-4">
       Made with 💖 by CodeWorks
@@ -16,12 +19,16 @@
 
 <script>
 import CreateCarModal from './components/CreateCarModal.vue'
+import CreateJobModal from './components/CreateJobModal.vue'
+import CreateHouseModal from './components/CreateHouseModal.vue'
 import Navbar from './components/Navbar'
 
 export default {
   components: {
     Navbar,
-    CreateCarModal
+    CreateCarModal,
+    CreateJobModal,
+    CreateHouseModal
   }
 }
 </script>

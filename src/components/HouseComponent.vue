@@ -1,11 +1,11 @@
 <template>
   <div class="house col-md-4 mb-3">
-    <router-link :to="{name: 'HouseDetails', params: { id: car.id }}">
+    <router-link :to="{name: 'HouseDetails', params: { id: house.id }}">
       <div class="card shadow">
         <img class="card-img-top" :src="house.imgUrl" alt="">
         <div class="card-body">
           <h4 class="card-title">
-            {{ house.bedroomsß }} - {{ car.bathrooms }}
+            {{ house.bedrooms }} - {{ house.bathrooms }}
           </h4>
         </div>
       </div>

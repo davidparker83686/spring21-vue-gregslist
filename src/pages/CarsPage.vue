@@ -37,8 +37,6 @@ export default {
       cars: computed(() => AppState.cars)
     })
 
-    // This fires everytime this component is rendered to the Dom
-    // similar to how we were using the 'constructor' of the controllers in MVC
     onMounted(async() => {
       try {
         await carsService.getCars()

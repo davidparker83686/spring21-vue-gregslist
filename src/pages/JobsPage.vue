@@ -1,13 +1,13 @@
 <template>
-  <div class="cars container">
+  <div class="jobs container">
     <div class="row">
       <div class="col  py-3">
-        <h2>Houses</h2>
-        <button title="Open Create House Form"
+        <h2>Jobs</h2>
+        <button title="Open Create Job Form"
                 type="button"
                 class="btn btn-outline-success"
                 data-toggle="modal"
-                data-target="#new-house-form"
+                data-target="#new-job-form"
         >
           <i class="fas fa-plus" aria-hidden="true"></i>
         </button>
@@ -17,29 +17,28 @@
       <div v-if="state.loading">
         <i class="fas fa-spinner fa-spin"></i>
       </div>
-      <House v-else v-for="house in state.houses" :key="house.id" :house="house" />
+      <Job v-else v-for="job in state.jobs" :key="job.id" :job="job" />
     </div>
   </div>
 </template>
 
 <script>
 import { computed, onMounted, reactive } from 'vue'
-
-import House from '../components/HouseComponent'
-import { housesService } from '../services/HousesService'
+import Job from '../components/JobsComponent'
+import { jobsService } from '../services/JobsService'
 import { AppState } from '../AppState'
 
 export default {
-  name: 'HousesPage',
+  name: 'JobsPage',
   setup() {
     const state = reactive({
       loading: true,
-      houses: computed(() => AppState.houses)
+      jobs: computed(() => AppState.jobs)
     })
 
     onMounted(async() => {
       try {
-        await housesService.getHouses()
+        await jobsService.getJobs()
         state.loading = false
       } catch (error) {
         console.error(error)
@@ -51,10 +50,9 @@ export default {
     }
   },
   components: {
-    House
+    Job
   }
 }
-
 </script>
 
 <style lang="scss" scoped>

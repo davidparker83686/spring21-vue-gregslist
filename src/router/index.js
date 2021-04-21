@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import About from '../pages/About.vue'
 import CarDetails from '../pages/CarDetailsPage.vue'
+import JobDetails from '../pages/JobDetailsPage.vue'
+import HouseDetails from '../pages/HouseDetailsPage.vue'
 import Cars from '../pages/CarsPage.vue'
 import Jobs from '../pages/JobsPage.vue'
 import Houses from '../pages/HousesPage.vue'

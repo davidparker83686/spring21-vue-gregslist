@@ -1,9 +1,9 @@
 <template>
-  <div class="house-details">
-    <h1>HOUSE DETAILS</h1>
+  <div class="job-details">
+    <h1>Hello From Job Details!</h1>
     {{ route.params.id }}
-    {{ state.house }}
-    <button type="button" class="btn btn-danger" @click="deleteHouse">
+    {{ state.job }}
+    <button type="button" class="btn btn-danger" @click="deleteJob">
       Delete
     </button>
   </div>
@@ -13,41 +13,43 @@
 import { useRoute, useRouter } from 'vue-router'
 import { AppState } from '../AppState'
 import { reactive, computed, onMounted } from 'vue'
-import { housesService } from '../services/HousesService'
+import { jobsService } from '../services/JobsService'
+
 export default {
-  name: 'HouseDetails',
-  setup(){
+  name: 'JobDetails',
+  setup() {
     const route = useRoute()
     const router = useRouter()
     const state = reactive({
-      house: computed(() => AppState.activeHouse)
+      job: computed(() => AppState.activeJob)
     })
+
     onMounted(async() => {
       try {
-        await housesService.getHouseById(route.params.id)
+        await jobsService.getJobById(route.params.id)
       } catch (error) {
         console.error(error)
       }
     })
-return {
+
+    return {
       route,
       state,
-      async deleteHouse() {
+      async deleteJob() {
         try {
-          await housesService.deleteHouse(state.house.id)
-          AppState.activeHouse = null
-          router.push({ name: 'Houses' })
+          await jobsService.deleteJob(state.job.id)
+          AppState.activeJob = null
+          router.push({ name: 'Jobs' })
         } catch (error) {
           console.error(error)
         }
       }
     }
-
   },
-  components:{}
+  components: {}
 }
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>
